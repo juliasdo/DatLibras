@@ -1,0 +1,118 @@
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(13, minmax(34px, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.letter-btn {
+    border: 1px solid var(--borda);
+    background: #fff;
+    color: var(--roxo-escuro);
+    border-radius: 10px;
+    padding: 10px 3px;
+    font-weight: 900;
+}
+
+.letter-btn:hover,
+.letter-btn.active {
+    background: var(--roxo);
+    color: #fff;
+    border-color: var(--roxo);
+}
+
+.panel h2 {
+    font-size: 1.35rem;
+}
+
+/* Quadro das imagens das letras */
+.reference-frame img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Ajuste para mostrar a mão inteira */
+.reference-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.empty-reference {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Área da câmera */
+.camera-frame {
+    height: 300px;
+    background: #201735;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin-top: 15px;
+}
+
+.camera-frame video {
+    display: none;
+}
+
+.camera-frame canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+}
+
+.camera-frame video {
+    position: absolute;
+}
+
+.camera-frame #cameraPlaceholder {
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Indicadores e seleção */
+.status {
+    font-size: .8rem;
+    padding: 6px 11px;
+    background: var(--lilas);
+    color: var(--roxo);
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.select-letter {
+    width: 85px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 900px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 500px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .camera-frame {
+        height: 240px;
+    }
+}
